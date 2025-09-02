@@ -6,8 +6,6 @@ import "./App.css";
 import LocationBar from "./components/LocationBar";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <div className="main-content">
