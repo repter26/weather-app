@@ -10,7 +10,7 @@ function App() {
     <>
       <div className="main-content">
         <nav>
-          <h1>Cropper</h1>
+          <h1>Crop Advisor</h1>
           <div>
             <a>Home</a>
             <a>Dashboard</a>

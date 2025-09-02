@@ -7,6 +7,8 @@ function LocationBar() {
   // Keep track of the map center (and marker position)
   const [center, setCenter] = useState({ lat: 52.3676, lng: 4.9041 }); // Amsterdam default
   const [selected, setSelected] = useState("");
+
+  const onSubmit = () => {};
   return (
     <LoadScript
       googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}
@@ -51,6 +53,8 @@ function LocationBar() {
             </select>
           </label>
         </div>
+
+        <button onClick={onSubmit}>Advise</button>
       </div>
 
       <GoogleMap
