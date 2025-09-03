@@ -8,7 +8,9 @@ function LocationBar() {
   const [center, setCenter] = useState({ lat: 52.3676, lng: 4.9041 }); // Amsterdam default
   const [selected, setSelected] = useState("");
 
-  const onSubmit = async () => {};
+  const onSubmit = async () => {
+    getWeatherData();
+  };
   return (
     <LoadScript
       googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}
