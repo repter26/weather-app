@@ -2,7 +2,24 @@ from fastapi import FastAPI, Query
 from app.services import fetch_weather
 from app.advisories import generate_advisory
 
+
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
 app = FastAPI(title="Crop Advisory API")
+
+origins = [
+    "http://localhost:5173",  
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,    
+    allow_credentials=True,
+    allow_methods=["*"],    
+    allow_headers=["*"],   
+)
+
 
 @app.get("/advisory")
 def get_advisory(
@@ -16,5 +33,5 @@ def get_advisory(
         "location": {"lat": lat, "lon": lon},
         "crop": crop,
         "advisories": advice,
-        "weather_snapshot": weather_data["list"][:8]  # send a sample for frontend chart
+        "weather_snapshot": weather_data["list"][:8] 
     }
