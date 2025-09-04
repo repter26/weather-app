@@ -9,10 +9,15 @@ nav {
   display: flex;
   width: 100vw;
   align-items: center;
+<<<<<<< HEAD
+=======
+  justify-content: center;
+>>>>>>> a8755d0bb9678d6a1181eddf817288d31896fa1a
 }
 
 nav h1 {
   margin: 20px;
+<<<<<<< HEAD
 }
 
 nav div {
@@ -22,4 +27,6 @@ nav div {
 
 nav a {
   margin: 0px 40px;
+=======
+>>>>>>> a8755d0bb9678d6a1181eddf817288d31896fa1a
 }
