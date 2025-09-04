@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Autocomplete from "react-google-autocomplete";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import getWeatherData from "../services/api";
 import "./LocationBar.css";
 const libraries = ["places"];
 function LocationBar() {
@@ -8,7 +9,9 @@ function LocationBar() {
   const [center, setCenter] = useState({ lat: 52.3676, lng: 4.9041 }); // Amsterdam default
   const [selected, setSelected] = useState("");
 
-  const onSubmit = () => {};
+  const onSubmit = async () => {
+    getWeatherData(center, selected);
+  };
   return (
     <LoadScript
       googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}

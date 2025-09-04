@@ -9,17 +9,9 @@ nav {
   display: flex;
   width: 100vw;
   align-items: center;
+  justify-content: center;
 }
 
 nav h1 {
   margin: 20px;
-}
-
-nav div {
-  margin-right: 70px;
-  margin-left: auto;
-}
-
-nav a {
-  margin: 0px 40px;
 }
