@@ -1,0 +1,36 @@
+.weather-card {
+  margin: 1rem auto;
+  padding: 1rem;
+  width: 80vw;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #fafafa;
+}
+
+.title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.subtitle {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.advisory-list {
+  margin: 0.5rem 0 1rem 0;
+  padding-left: 1.2rem;
+  color: #333;
+}
+
+.advisory-item {
+  margin-bottom: 0.3rem;
+  list-style: disc;
+}
+
+.chart-container {
+  width: 100%;
+  height: 250px;
+}
