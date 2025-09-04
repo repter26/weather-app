@@ -12,8 +12,18 @@ function LocationBar() {
   const [selected, setSelected] = useState("");
   const [advisories, setAdvisories] = useState(null);
   const [weatherData, setWeatherData] = useState(null);
+  const [error, setError] = useState("");
 
   const onSubmit = async () => {
+    setError("");
+    if (!center.lat || !center.lng) {
+      setError("Please select a valid location.");
+      return;
+    }
+    if (!selected) {
+      setError("Please select a crop.");
+      return;
+    }
     const data = await getWeatherData(center, selected);
     setAdvisories(data.advisories);
     setWeatherData({ list: data.weather_snapshot });
@@ -38,11 +48,8 @@ function LocationBar() {
           options={{ types: ["(regions)"] }}
           defaultValue="Amsterdam"
         />
-
         <select value={selected} onChange={(e) => setSelected(e.target.value)}>
-          <option value="" disabled hidden>
-            Crop
-          </option>
+          <option value="">Select a crop</option>
           <option value="corn">Corn</option>
           <option value="wheat">Wheat</option>
           <option value="rice">Rice</option>
@@ -53,8 +60,8 @@ function LocationBar() {
           <option value="cotton">Cotton</option>
           <option value="coffee">Coffee</option>
         </select>
-
         <button onClick={onSubmit}>Advise</button>
+        {error && <p className="error-message">{error}</p>}{" "}
       </div>
 
       <GoogleMap
